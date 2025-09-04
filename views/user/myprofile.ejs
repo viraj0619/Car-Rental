@@ -1,0 +1,67 @@
+<%-include("navbar.ejs")%>
+
+<% for(var i=0 ; i<user.length; i++) { %>
+<section class="main">
+    <div class="box1">
+        <div class="icon">
+            <div class="symbol">
+                <i class="fa-solid fa-user uicon"></i>
+            </div>
+            <div class="name">
+                <h2><b><span class="text-success">Name:&nbsp;&nbsp;</span><%=user[i].user_name%></b></h2>
+                <p class="text-dark"><b><span class="text-success">Mobile:&nbsp;&nbsp;</span><%=user[i].user_mobile%></b></p>
+                <p class="text-dark"><b><span class="text-success">Email:&nbsp;&nbsp;</span><%=user[i].user_email%></b></p>
+                <p class="text-dark"><b><span class="text-success">Adhar:&nbsp;&nbsp;</span><%=user[i].user_aadhar%></b></p>
+                <p class="text-dark"><b><span class="text-success">City:&nbsp;&nbsp;</span><%=user[i].user_city%></b></p>
+                <p class="text-dark"><b><span class="text-success">Address:&nbsp;&nbsp;</span><%=user[i].user_address%></b></p><br>
+                <hr>
+            </div>
+        </div>
+        <ul class="check">
+            <li><i class="fa-solid fa-circle-xmark" style="color: red;"></i> Profile Document</li><br>
+            <li><i class="fa-solid fa-check" style="color: green;"></i> <%=user[i].user_mobile%></li><br>
+            <li><i class="fa-solid fa-circle-xmark"></i> Payment</li>  
+        </ul><br>
+        <hr><br>
+        <p class="fa1"><i class="fas fa-coins"></i>&nbsp;My Credits <span class="right"> ₹ 0 </span></p><br><br>
+        <hr><br>
+        <p class="fa1"><i class="fas fa-dollar-sign"></i> &nbsp;Z-Points <a href="" class="right">Install App to use z-points</a></p> <br> 
+        <hr><br>
+        <p class="fa1"><i class="fa-regular fa-credit-card"></i> Payment Wallet <a href="#" class="right">Link Wallet</a></p><br>
+        <hr><br>
+        <p class="my">My Bookings</p> <br><br><hr><br>    
+        <h3 class="fa2">Saved Cards</h3><br>
+        <hr><br>
+        <h3 class="fa2">Account</h3><br>
+        <hr>
+    </div>
+    <% } %>
+    <div class="box2">
+        
+        <h1>MY BOOKING</h1><br>
+        <div class="d-flex justify-content-left">
+            <a href="/logout" class="btn btn-danger ">Logout</a>
+        </div>
+
+        <hr>
+        
+        <div class="data">
+            <h4>Car Name :</h4><br>
+            
+            <h4 class="img">Image :</h4>
+            
+            <h4>Location :</h4><br>
+            
+            <h4>Pickup Time:</h4><br>
+            
+            <h4>Drop Time:</h4>
+            
+        </div>
+
+
+       
+                        
+    </div>
+</section>
+
+<%-include("footer.ejs")%>

@@ -1,0 +1,385 @@
+<%-include("navbar.ejs")%>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+<script src="https://kit.fontawesome.com/6bd4a9adaf.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/6bd4a9adaf.js" crossorigin="anonymous"></script>
+
+  
+
+
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-lg-8 col-sm-12 " style="height: auto;">
+        <a href="/services" style="text-decoration: none;"> <i class="fa-solid fa-chevron-left"></i> Back</a>
+
+        <div id="gallery" class="photos-grid-container gallery">
+          <div class="main-photo img-box" style="height: 400px !important; width: 100% !important;">
+            <a href="/admin/uploads/<%=services_info[0].car_main_img%>" class="glightbox" data-glightbox="type: image">
+              <img src="/admin/uploads/<%=services_info[0].car_main_img%>" style="height: 100% !important; width: 100% !important;" alt="image" />
+            </a>
+          </div>
+          
+          <div>
+            <div class="sub">
+              <div class="img-box" ><a
+                  href="/admin/uploads/<%=services_info[0].car_img1%>"
+                  class="glightbox" data-glightbox="type: image"><img
+                    src="/admin/uploads/<%=services_info[0].car_img1%>" style="height: 200px !important; width: 100% !important;"
+                    alt="image" /></a></div>
+              <div class="img-box"><a
+                href="/admin/uploads/<%=services_info[0].car_img2%>"
+                class="glightbox" data-glightbox="type: image"><img
+                  src="/admin/uploads/<%=services_info[0].car_img2%>" style="height: 200px !important; width: 100% !important;"
+                  alt="image" /></a></div>
+              <div class="img-box"><a
+                href="/admin/uploads/<%=services_info[0].car_img3%>"
+                class="glightbox" data-glightbox="type: image"><img
+                  src="/admin/uploads/<%=services_info[0].car_img3%>" style="height: 200px !important; width: 100% !important;"
+                  alt="image" /></a></div>
+              <div id="multi-link" class="img-box">
+                <a href="/admin/uploads/<%=services_info[0].car_img4%>"
+                  class="glightbox" data-glightbox="type: image">
+                  <img
+                    src="/admin/uploads/<%=services_info[0].car_img4%>"
+                    alt="image" style="height: 100%;"/>
+                  <div class="transparent-box">
+                    <div class="caption">
+                      +2
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div id="more-img" class="extra-images-container hide-element">
+            <a href="/admin/uploads/<%=services_info[0].car_img5%>"
+              class="glightbox" data-glightbox="type: image"><img
+                src="/admin/uploads/<%=services_info[0].car_img5%>"
+                alt="image" /></a>
+            <a href="/admin/uploads/<%=services_info[0].car_img6%>"
+              class="glightbox" data-glightbox="type: image"><img
+                src="/admin/uploads/<%=services_info[0].car_img6%>"
+                alt="image"  /></a>            
+          </div>
+        </div>
+        <div class="row mb-5 p-3">
+          <div class="col-9">
+           
+            <h4> <%=services_info[0].car_name%></h4>
+            <ul class="mahindra_thar">
+              <li>. <%=services_info[0].car_type%></li>
+              <li style="padding-left: 10px;">. <%=services_info[0].car_fuel_type%></li>
+              <li style="padding-left: 10px;">. <%=services_info[0].car_seats%> Seats</li>
+            </ul>
+          </div>
+          <div class="col-3">
+            <!-- <div class="row">
+              <div class="col-12 bg-dark" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                <p class="text-white text-center"><i class="fa-solid fa-star"></i>
+                  <b>5.0</b> <span>(4)</span>
+                </p>
+              </div>
+              <div class="col-12"
+                style="border: 1px solid rgb(233, 204, 204); padding: 5px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; text-align: center;">
+                <span class="text-center"> 4 Reviews </span>
+              </div>
+            </div> -->
+          </div>
+
+          <!-- <div class="col-12 mt-3"
+            style="border-top: 1px solid rgb(177, 148, 148); border-bottom: 1px solid rgb(177, 148, 148);">
+            <h5 class="pt-3">Ratings & Reviews</h5>
+            <div class="row">
+              <div class="col-1">
+                <h2>5.0</h2>
+              </div>
+              <div class="col-11">
+                <i class="fa-solid fa-star" style="color: rgb(218, 98, 54);"></i>
+                <i class="fa-solid fa-star" style="color: rgb(218, 98, 54);"></i>
+                <i class="fa-solid fa-star" style="color: rgb(218, 98, 54);"></i>
+                <i class="fa-solid fa-star" style="color: rgb(218, 98, 54);"></i>
+                <i class="fa-solid fa-star" style="color: rgb(218, 98, 54);"></i>
+                <p>Based on 4 Trips</p>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-lg-10 col-sm-12">
+            <h6 class="pt-3">REVIEWS (4)</h6>
+          </div>
+          <div class="col-lg-2 col-sm-12 pt-3">
+            <a href="">Views all</a>
+          </div>
+
+
+
+          <div class="row" style="border-bottom: 1px solid rgb(234, 182, 182); padding-bottom: 20px;">
+            <div class="col-lg-4 col-sm-6 mt-3">
+              <div class="card card-body p-0">
+                <div class="row p-2">
+                  <div class="col-2">
+                    <span style="background-color: green; padding: 5px 10px; border-radius: 50%;color: white">P</span>
+                  </div>
+                  <div class="col-6 ">
+                    <p style="font-size: 8px; font-weight: 900;">
+                      MANIL CHINBAHADUR GHARTI<br />
+                      <span style="font-size: 10px; font-weight: 100;"> on Jun 17th, 2024 </span>
+                    </p>
+                  </div>
+                  <div class="col-4">
+                    <span style="background-color: green; padding: 5px; color: white;"><i class="fa-solid fa-star"></i>
+                      5</span>
+                  </div>
+                  <div class="col-12">
+                    <p style="font-size: 12px;">Great car,smooth ride, clean car, amazing music system and amazing host
+                      ,
+                      highly recommended, go for it anytime any day.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mt-3">
+              <div class="card card-body p-0">
+                <div class="row p-2">
+                  <div class="col-2">
+                    <span style="background-color: green; padding: 5px 10px; border-radius: 50%;color: white">P</span>
+                  </div>
+                  <div class="col-6">
+                    <p style="font-size: 8px; font-weight: 900;">
+                      MANIL CHINBAHADUR GHARTI<br />
+                      <span style="font-size: 10px; font-weight: 100;"> on Jun 17th, 2024 </span>
+                    </p>
+                  </div>
+                  <div class="col-4">
+                    <span style="background-color: green; padding: 5px; color: white;"><i class="fa-solid fa-star"></i>
+                      5</span>
+                  </div>
+                  <div class="col-12">
+                    <p style="font-size: 12px;">Great car,smooth ride, clean car, amazing music system and amazing host
+                      ,
+                      highly recommended, go for it anytime any day.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mt-3">
+              <div class="card card-body p-0">
+                <div class="row p-2">
+                  <div class="col-2">
+                    <span style="background-color: green; padding: 5px 10px; border-radius: 50%;color: white">P</span>
+                  </div>
+                  <div class="col-6">
+                    <p style="font-size: 8px; font-weight: 900;">
+                      MANIL CHINBAHADUR GHARTI<br />
+                      <span style="font-size: 10px; font-weight: 100;"> on Jun 17th, 2024 </span>
+                    </p>
+                  </div>
+                  <div class="col-4">
+                    <span style="background-color: green; padding: 5px; color: white;"><i class="fa-solid fa-star"></i>
+                      5</span>
+                  </div>
+                  <div class="col-12">
+                    <p style="font-size: 12px;">Great car,smooth ride, clean car, amazing music system and amazing host
+                      ,
+                      highly recommended, go for it anytime any day.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <h5 class="pt-3">Car Location</h5>
+
+          <div class="row" style="border-bottom: 1px solid rgb(199, 145, 145); padding-bottom: 20px;">
+            <div class="col-10">
+              <p>Lifespace Legacy, Plot no 205, Sector 3, Ulwe, Navi Mumbai, Wahal, Maharashtra 410206, India</p>
+              <b>4.9 Kms Away</b>
+            </div>
+            <div class="col-2 m-3" style="height: 70px; width: 70px; background-image: url('https://tse4.mm.bing.net/th?id=OIP.ODjs-jC7fqEj2PzifID8cgHaF7&pid=Api&P=0&h=180'); background-repeat: no-repeat; background-size: 100% 100%; opacity: 0.7;">
+              <i class="fa-solid fa-location-pin text-success text-center pt-3 pl-5"></i>
+            </div>
+          </div>
+
+          <h6 class="pt-3">Features</h6>
+          <div class="row" style="border-bottom: 1px solid rgb(199, 145, 145);padding-bottom: 20px;">
+            <div class="col-4">
+              <p>
+                <i class=" fa-solid fa-phone p-1 text-primary"></i>Aux Input
+              </p>
+            </div>
+            <div class="col-4">
+              <p>
+                <i class=" fa-solid fa-virus p-1 text-primary"></i>Air Freshener
+              </p>
+            </div>
+            <div class="col-4">
+              <p>
+                <i class=" fa-solid fa-road p-1 text-primary"></i>Cruise Control
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12" style="border-bottom: rgb(199, 145, 145);padding-bottom: 30px;">
+            <img
+              src="https://zoomcar-assets.zoomcar.com/images/original/1cce3491b1287dcec9cc366951b08bc773193b16.png?1710940976"
+              style="height: 100px; width: 100%; border-radius: 10px; margin-top: 20px;" />
+            <p class="mt-3"> <b>Travel with confidence</b><br />
+              Choose a plan & secure your trip</p>
+
+            <div class="row" style="border-bottom: 1px solid rgb(199, 145, 145);padding-bottom: 30px;">
+              <div class="col-lg-4 col-sm-12">
+                <div class="card card-body">
+                  <p class="text-secondary"> Basic</p>
+                  <b>$239</b>
+                  <p class="text-secondary">Only pay Rs.3499 in case of any accidents</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <b>Enjoy these additional benefits</b>
+          <div class="col-12 mt-2 mb-4">
+            <div class="card card-body">
+              <div class="row">
+                <div class="col-lg-7 col-sm-12">
+                  <div class="row">
+                    <div class="col-2">
+                      <i style="background-color: rgba(0, 0, 200, 0.5);padding:8px 10px; border-radius: 50%;"
+                        class="fa-solid fa-infinity "></i>
+                    </div>
+                    <div class="col-10">
+                      <b>Unlimited KMs</b>
+                      <p class="text-secondary">Endless kilometres with no extra charge</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 col-sm-12">
+                  <div class="row">
+                    <div class="col-2">
+                      <i style="background-color: rgba(0, 0, 200, 0.5);padding:8px 10px; border-radius: 50%;"
+                        class="fa-solid fa-unlock"></i>
+                    </div>
+                    <div class="col-10">
+                      <b>Zero Deposit</b>
+                      <p class="text-secondary">No security deposits or fees</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="col-12 "
+            style="border-top: 1px solid rgb(199, 145, 145); padding-top: 10px; border-bottom: 1px solid rgb(199, 145, 145);padding-bottom: 10px;">
+            <div class="row">
+              <div class="col-lg-1 col-sm-12">
+                <img
+                  src="https://zoomcar-assets.zoomcar.com/images/original/401d362e605322d05799b90870689ddfb07b9ee3.png?1710941154"
+                  style="height: 50px;">
+              </div>
+              <div class="col-lg-8 col-sm-12 ">
+               <b> Cancellation Unavailable</b>
+                <p>This booking is non-refundable</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="col-lg-4 col-sm-12 p-5 bg-light">
+        <h5>Exclusive Offers</h5>
+        <div class="card card-body pl-0 pt-2 pb-0 pr-0">
+          <div class="row">
+            <div class="col-2">
+              <i class="fa-solid fa-tags text-center text-primary pt-2 " style="font-size: 24px;"></i>
+            </div>
+            <div class="col-8">
+              <a href="/services" style="text-decoration: none;">
+              <p class="text-secondary"> <b class="text-dark">Explore Offres </b><br />
+                Check Availability Here
+              </p></a>
+            </div>
+            <div class="col-2">
+              <i class="fa-solid fa-angle-right pt-3 text-secondary" style="font-size: 24px;"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row "
+          style="border-top: 1px solid rgb(227, 202, 202); margin-top: 20px; border-bottom: 1px solid rgb(227, 202, 202); ">
+          <div class="col-9">
+            <p>
+              Trip Protection Package<br />
+              (Secure Plus)
+              <a href="" style="text-decoration: none;">Change</a>
+            </p>
+          </div>
+          <div class="col-3">
+            <span> </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-7">
+            <p class="pt-4">
+              <b>Total Price</b><br>
+              Inclusive of taxes
+            </p>
+          </div>
+          <div class="col-5">
+            <% var minutes = pickup_data[0].rent_minute; %>
+<% var hours = Math.ceil(minutes / 60); %>
+<% var final_amount = services_info[0].main_price * hours; %>
+
+<p class="pt-4"><b>₹ <%= Math.round(final_amount) %></b><br /></p>
+          </div>
+          <div class="col-12">
+            <%if(Login_id=='undifined'){%>
+           <a href="/login"><button class="btn btn-success w-100">Login To Continue</button></a> 
+            <%}else{%>
+            <button class="btn btn-success w-100"> Continue</button>
+            <%}%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      width: "90vw",
+      height: "90vh"
+    });
+  </script>
+
+<script>
+  function setImageUrl() {
+      const imgUrl = "/admin/uploads/<%=services_info[0].car_main_img%>";
+      document.getElementById("myImage").href = imgUrl;
+  }
+  
+  // Call the function to set the image
+  </script>
+  
+<%-include("footer.ejs")%>

@@ -1,0 +1,40 @@
+<%-include("navbar.ejs")%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+                <h1 class="text-dark " style="font-weight:600 ;">Update Image Slider Home page</h1>
+            </div </div>
+
+            <div class="row mt-5">
+                <form action="/admin/edit_slider" method="post" class="m-4" >
+                    <div class="col-md-4">
+                        Slider_id
+                        <input type="hidden" name="image_id"class="form-control" value="<%=slider.image_id%>">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Upload Image Slider
+                            <input type="file" name="home_image" accept="image/*" class="form-control" >
+                        </div>
+                        <div class="col-md-4">
+                            Enter Home Title
+                            <input type="text" name="home_title" class="form-control" value="<%=slider.home_title%>">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Sub Title
+                            <input type="text" name="home_sub_title" class="form-control" value="<%=slider.home_sub_title%>">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center mt-4">
+                            <button class="btn btn-success">Save </button>
+                        </div>
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+    
+
+    
+    
+    <%-include("footer.ejs")%>

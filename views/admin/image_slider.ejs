@@ -1,0 +1,64 @@
+<%-include("navbar.ejs")%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+                <h1 class="text-dark " style="font-weight:600 ;">Image Slider Home page</h1>
+            </div </div>
+
+            <div class="row mt-5">
+                <form action="/admin/save_slider" method="post" class="m-4" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Upload Image Slider
+                            <input type="file" name="home_image" accept="image/*" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Home Title
+                            <input type="text" name="home_title" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Sub Title
+                            <input type="text" name="home_sub_title" class="form-control">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center mt-4">
+                            <button class="btn btn-success">Save </button>
+                        </div>
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+    
+
+    <table class="table table-success table-striped table-bordered mt-4">
+        <tr>
+            <th>Action</th>
+            <th>SrNO</th>
+            <th>Image</th>
+            <th>Home Title</th>
+            <th>Home Sub Title</th>
+        </tr>
+        <% for(var i=0 ; i<slider.length;i++) { %>
+        <tr>
+            <td style="width: 10%;">
+                <a href="/admin/edit_slider/<%=slider[i].image_id%>" class="btn btn-success p-2">
+                    <i class="fa-solid fa-pen-to-square">
+
+                    </i>
+                <a href="/admin/delete_slider/<%=slider[i].image_id%>" class="btn btn-danger p-2 ms-3">
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </td>
+            <td><h3><%=i+1%></h3></td>
+            <td >
+                <img src="/admin/uploads/<%=slider[i].home_image%>" alt="" style="width: 500px; height: 200px;">
+            </td>
+            <td><h3><%=slider[i].home_title%></h3></td>
+            <td><h3><%=slider[i].home_sub_title%></h3></td>
+         
+        </tr>
+        <% } %>
+    </table>
+    
+    <%-include("footer.ejs")%>

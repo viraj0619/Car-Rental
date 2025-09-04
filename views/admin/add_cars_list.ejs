@@ -1,0 +1,70 @@
+<%-include('./navbar.ejs')%>
+    <div class="container" style="margin-top: 100px;">
+        <div class=" shadow d-flex justify-content-between align-items-center mb-3">
+            <h2 class="">Added Cars List</h2>
+            <!-- <button class="btn btn-primary no-print" onclick="window.print()">Print</button> -->
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-light bg-light ">
+                    <tr>
+                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Car Name</th>
+                        <th>Car Type</th>
+                        <th>Car Fuel Type</th>
+                        <th>Car Seats</th>
+                        <th>Car Trips Count</th>
+                        <th>Car Actual Price</th>
+                        <th>Car Discount</th>
+                        <th>Car Exe Fees</th>
+                        <th>Main Car Img</th>
+                        <th>Car Img1</th>
+                        <th>Car Img2</th>
+                        <th>Car Img3</th>
+                        <th>Car Img4</th>
+                        <th>Car Img5</th>
+                        <th>Car Img6</th>
+                        <th>Car Final Price</th>
+                        <th>Car Added Date</th>
+                    </tr>
+                </thead>
+                <% for(var i=0;i<services_info.length;i++){%>
+                <tbody>
+                    <tr>
+                        <td><a href="/admin/delete_service_cars/<%=services_info[i].car_services_id %>" onclick="return confirm('Are You Sure?')" style="font-size: 20px ;float: left; text-decoration: none;"><i class="fa-solid fa-trash text-danger"></i></a>
+                            <a href="/admin/edit_service_cars/<%=services_info[i].car_services_id %>" style="font-size: 20px ; margin-left: 15px;text-decoration: none;"><i class="fa-solid fa-edit text-success"></i></a></td>
+                        <td><%=i+1%>.</td>
+                        <td><%=services_info[i].car_name%></td>
+                        <td><%=services_info[i].car_type%></td>
+                        <td><%=services_info[i].car_fuel_type%></td>
+                        <td><%=services_info[i].car_seats%></td>
+                        <td><%=services_info[i].car_trips_count%></td>
+                        <td><%=services_info[i].car_actual_price%>/hr</td>
+                        <td><%=services_info[i].car_dis%></td>
+                        <td><%=services_info[i].car_exc_fees%></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_main_img%>" height="50px" width="50px"></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_img1%>" height="50px" width="50px"></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_img2%>" height="50px" width="50px"></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_img3%>" height="50px" width="50px"></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_img4%>" height="50px" width="50px"></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_img5%>" height="50px" width="50px"></td>
+                        <td><img src="/admin/uploads/<%=services_info[i].car_img6%>" height="50px" width="100px"></td>
+                        <td><%=services_info[i].main_price%>/hr</td>
+                        <td><%=services_info[i].add_car_date%></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+                <%}%>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+<%-include('./footer.ejs')%>

@@ -1,0 +1,94 @@
+<%-include("navbar.ejs")%>
+    <div class="row mb-5">
+        <div class="col-4" style="margin-top: 60px;margin-left: 150px;">
+            <a href="/" style="color: orangered; text-shadow: 0px 0px 10px #d0c2bd; text-decoration: none;">Home></a> <span style="color: black; padding-left: 20px;">Contact</span>
+            <h1 class="text-dark pt-4" style="text-shadow: 0px 0px 10px black;">Contact Page</h1>
+        </div>
+    </div>
+
+  <div class="container  mb-5">
+    <div class="row">
+        <div class="col-lg-5 col-sm-12">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-regular fa-map text-primary" style="font-size: 40px;"></i>
+                            </div>
+                            <div class="col-10">
+                                <span class="text-secondary">Address</span>
+                                <h5>198 West 21th Street, Suite 721 New York NY 10016</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 mt-3">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid fa-phone text-primary" style="font-size: 40px;"></i>
+                            </div>
+                            <div class="col-10">
+                                <span class="text-secondary">Phone</span>
+                                <h5>+ 1235 2355 98</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="card card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="fa-solid  fa-envelope text-primary" style="font-size: 40px;"></i>
+                            </div>
+                            <div class="col-10">
+                                <span class="text-secondary">Email</span>
+                                <h5>info@yoursite.com
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-7 col-sm-12" style="background-color: rgb(248,249,250);">
+             <form action="/save_contact" method="post">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" name="name" placeholder="Your Name" style="width: 90%;margin-left: 5%; margin-top: 40px; padding: 10px; border-radius: 5px; border: 1px solid black;" />
+                    </div>
+                    <div class="col-12">
+                        <input type="email" name="email" placeholder="Your Email" style="width: 90%;margin-left: 5%; margin-top: 40px; padding: 10px; border-radius: 5px; border: 1px solid black;" />
+                    </div>
+                    <div class="col-12">
+                        <input type="number" name="mobile" placeholder="Your Mobile" style="width: 90%;margin-left: 5%; margin-top: 40px; padding: 10px; border-radius: 5px; border: 1px solid black;" />
+                    </div>
+                    <div class="col-12">
+                        <textarea placeholder="Your Name" name="message" style="width: 90%;margin-left: 5%; margin-top: 40px; padding: 10px; border-radius: 5px; border: 1px solid black; height: 120px; " ></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" style="margin-top: 40px; margin-left: 5%; margin-bottom: 30px;">Send Message</button>
+                    </div>
+                    
+                 </div>
+             </form>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120637.9498952214!2d74.66027017683541!3d19.11046628153684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcb05d46788921%3A0x6677e92c1a5181b6!2sAhmednagar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1718458986627!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+  </div>
+
+<%-include("footer.ejs")%>

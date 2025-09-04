@@ -1,0 +1,80 @@
+<%-include("navbar.ejs")%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+                <h1 class="text-dark " style="font-weight:600 ;">Add Image Icon</h1>
+            </div </div>
+
+            <div class="row mt-5">
+                <form action="/admin/save_icon" method="post" class="m-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Enter Navbar Address
+                            <input type="text" name="icon_address" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Navbar Mobile
+                            <input type="text" name="icon_mobile" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Open/Close Time
+                            <input type="text" name="icon_time" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mt-4">
+                            Enter Linkedin Link
+                            <input type="text" name="icon_linkedin" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            Enter Facebook Link
+                            <input type="text" name="icon_facebook" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-4">
+                            Enter Icon What's App
+                            <input type="text" name="icon_whatsapp" class="form-control">
+                        </div>
+                        <div class="col-md-12 d-flex justify-content-center mt-4">
+                            <button class="btn btn-success">Save </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+
+    <table class="table table-success table-striped table-bordered mt-4">
+        <tr>
+            <th>Action</th>
+            <th>SrNO</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th>Open/Close Time</th>
+            <th>Linked link</th>
+            <th>Facebook Link</th>
+            <th>What's App Link</th>
+        </tr>
+        <% for(var i=0 ; i<icons.length;i++) { %>
+        <tr>
+            <td style="width: 10%;">
+                <a href="/admin/icon_edit/<%= icons[i].icon_id %>" class="btn btn-success p-2">
+                    <i class="fa-solid fa-pen-to-square">
+
+                    </i>
+                <a href="/admin/icon_delete/<%=icons[i].icon_id%>" class="btn btn-danger p-2 ms-3">
+                    <i class="fa-solid fa-trash"></i>
+                </a>
+            </td>
+            <td><%=i+1%></td>
+            <td><%=icons[i].icon_address%></td>
+            <td><%=icons[i].icon_mobile%></td>
+            <td><%=icons[i].icon_time%></td>
+            <td><%=icons[i].icon_linkedin%></td>
+            <td><%=icons[i].icon_facebook%></td>
+            <td><%=icons[i].icon_whatsapp%></td>
+        </tr>
+        <% } %>
+    </table>
+    
+    <%-include("footer.ejs")%>

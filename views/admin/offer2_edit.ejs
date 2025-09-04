@@ -1,0 +1,46 @@
+<%-include("navbar.ejs")%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+            <h1 class="text-dark " style="font-weight:600 ;">Edit offer Second Home page</h1>
+        </div </div>
+        
+        <div class="row mt-5">
+            <form action="/admin/save_offer2_edit" method="post" class="m-4" enctype="multipart/form-data">
+                <div class="col-md-4">
+                    Enter Home Head
+                    <input type="hidden" name="offer_second_id" class="form-control" value="<%=offer2.offer_second_id%>">
+                </div>
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        Enter Home Head
+                        <input type="text" name="offer2_head" class="form-control" value="<%=offer2.offer2_head%>">
+                    </div>
+                    <div class="col-md-4">
+                        Enter Sub Title
+                        <input type="text" name="offer2_title" class="form-control" value="<%=offer2.offer2_title%>">
+                    </div>
+                    <div class="col-md-4">
+                        Enter Sub Description
+                        <input type="text" name="offer2_desc" class="form-control" value="<%=offer2.offer2_desc%>">
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        Enter Sub Price
+                        <input type="number" name="offer2_price" class="form-control" value="<%=offer2.offer2_price%>">
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        Enter Sub Price
+                        <input type="number" name="offer2_duplicate" class="form-control" value="<%=offer2.offer2_duplicate%>">
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center mt-4">
+                        <button class="btn btn-success">Save </button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+    
+    <%-include("footer.ejs")%>

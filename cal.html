@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Difference Calculator</title>
+</head>
+<body>
+    <h1>Time Difference Calculator</h1>
+    <p>Enter start time (HH:MM format):</p>
+    <input type="text" id="startTime" placeholder="00:00">
+    <p>Enter end time (HH:MM format):</p>
+    <input type="text" id="endTime" placeholder="00:00">
+    <button onclick="calculateTimeDifference()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function getTimeDifference(startTime, endTime) {
+            // Same logic as before to calculate the difference
+            // ... (refer to previous function explanation)
+        }
+
+        function calculateTimeDifference() {
+            const startTime = document.getElementById("startTime").value;
+            const endTime = document.getElementById("endTime").value;
+
+            // Validate input format (optional)
+            const regex = /^([0-1][0-9]|2[0-3]):([0-5][0-9])$/;
+            if (!regex.test(startTime) || !regex.test(endTime)) {
+                alert("Invalid time format. Please use HH:MM.");
+                return;
+            }
+
+            const difference = getTimeDifference(startTime, endTime);
+
+            // Display the difference (modify as needed)
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `The difference is ${difference.hours} hours ${difference.minutes} minutes`;
+        }
+    </script>
+</body>
+</html>

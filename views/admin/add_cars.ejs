@@ -1,0 +1,109 @@
+<%-include('./navbar.ejs')%>
+
+
+<form action="/admin/add_services_car" method="post" enctype="multipart/form-data">
+    <div class="container-fluid bg-white shadow p-3 mt-5">
+        <div class="row">
+            <div class="col-md-12">
+    
+                <h3 class="p-2 mt-5 shadow-sm">Add Services Cars </h3>
+            </div>
+            <div class="col-md-4 p-2">
+                Car Name 
+                <input type="text" required name="car_name" class="form-control">
+            </div>
+            <div class="col-md-4 p-2">
+                Car Type <br>
+                <select required name="car_type" class="custom-select">
+                    <option disabled readonly>Choose</option>
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                </select>
+                
+            </div>
+            <div class="col-md-4 p-2">
+                Car Fuel Type <br>
+                <select name="car_fuel_type" required class="custom-select">
+                    <option disabled readonly>Choose</option>
+                    <option value="Petrol">Diesel</option>
+                    <option value="Diesel">Petrol</option>
+                    <option value="CNG">CNG</option>
+                </select>               
+            </div>
+            <div class="col-md-4 p-2">
+                Car Seats 
+                <input type="number" required name="car_seats" class="form-control">
+                            
+            </div>
+            <div class="col-md-4 p-2">
+                Car Trips Count 
+                <input type="number" name="car_trips_count" class="form-control">                            
+            </div>
+            <div class="col-md-4 p-2">
+                Car Actual Price/hr
+                <input type="number" required name="car_actual_price" id="car-actual-price" class="form-control" oninput="calculateDiscount()">
+            </div>
+            <div class="col-md-4 p-2">
+                Car Discount Price(%)
+                <input type="number" name="car_dis" id="car-discount" value="0" class="form-control" oninput="calculateDiscount()">
+            </div>
+            <div class="col-md-4 p-2">
+                Car Main Price/hr
+                <input type="number" name="main_price" id="main-price" class="form-control" readonly>
+            </div>
+            
+            <div class="col-md-4 p-2">
+                Car Excluding Fees
+                <input type="number" name="car_exc_fees" value="0" class="form-control">                          
+            </div>
+            <div class="col-md-3 p-2">
+                Car Main Image 
+                <input type="file" accept="image/*" required name="car_main_img" class="form-control">
+            </div>
+            <div class="col-md-3 p-2">
+                Car Sub Image 1(min 5-6)
+                <input type="file" accept="image/*" required name="car_img1" class="form-control">
+            </div>
+            <div class="col-md-3 p-2">
+                Car Sub Image 2(min 5-6)
+                <input type="file" accept="image/*" required name="car_img2" class="form-control">
+            </div>
+            <div class="col-md-3 p-2">
+                Car Sub Image 3(min 5-6)
+                <input type="file" accept="image/*" required name="car_img3" class="form-control">
+            </div>
+            <div class="col-md-3 p-2">
+                Car Sub Image 4(min 5-6)
+                <input type="file" accept="image/*" required name="car_img4" class="form-control">
+            </div>
+            <div class="col-md-3 p-2">
+                Car Sub Image 5(min 5-6)
+                <input type="file" accept="image/*" required name="car_img5" class="form-control">
+            </div>
+            <div class="col-md-3 p-2">
+                Car Sub Image 6(min 5-6)
+                <input type="file" accept="image/*" required  name="car_img6" class="form-control">
+            </div>
+            <div class="col-md-12 p-2">
+                <center>
+                <button class="btn btn-success text-white text-center">Add Services Car</button>
+            </center>
+            </div>
+        </div>       
+        </div>
+    </div>
+</form>
+<script>
+    function calculateDiscount() {
+        const actualPrice = parseFloat(document.getElementById('car-actual-price').value) || 0;
+        const discountPercentage = parseFloat(document.getElementById('car-discount').value) || 0;
+        
+        const discountAmount = (actualPrice * discountPercentage) / 100;
+        const discountedPrice = actualPrice - discountAmount;
+
+        document.getElementById('main-price').value = discountedPrice.toFixed(2);
+    }
+</script>
+
+<%-include('./footer.ejs')%>
+

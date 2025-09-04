@@ -1,0 +1,84 @@
+<%-include("navbar.ejs")%>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+            <h1 class="text-dark " style="font-weight:600 ;">Offer Third  Home page</h1>
+        </div </div>
+        
+        <div class="row mt-5">
+            <form action="/admin/save_offer_third" method="post" class="m-4" enctype="multipart/form-data">
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        Enter Available Data
+                        <input type="date" name="offer3_avai_date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        Enter Expire Date
+                        <input type="date" name="offer3_expi_date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        Enter Offer Title
+                        <input type="text" name="offer3_title" class="form-control">
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        Enter Discount
+                        <input type="number" name="offer3_discount" class="form-control">
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        Upload Offer Image 1
+                        <input type="file" name="offer3_upload" accept="image/*" class="form-control">
+                    </div>
+                    
+                    <div class="col-md-12 d-flex justify-content-center mt-4">
+                        <button class="btn btn-success">Save </button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+    <%
+function formatDateToDDMMYY(dateString) {
+    const date = new Date(dateString);
+    let day = date.getDate();
+    let month = date.getMonth() + 1; // Months are zero-indexed
+    let year = date.getFullYear().toString().slice(-2); // Get last two digits of the year
+
+    // Pad day and month with leading zeros if necessary
+    day = day < 10 ? '0' + day : day;
+    month = month < 10 ? '0' + month : month;
+
+    return `${day}${month}${year}`;
+}
+%>
+
+    <table class="table table-striped table-bordered table-success">
+        <tr>
+            <th>Action</th>
+            <th>SrNO</th>
+            <th>Available Date</th>
+            <th>Expire Date</th>
+            <th>Title</th>
+            <th>Discount</th>
+            <th>Image</th>
+        </tr>
+
+        <% for(var i = 0; i < offer3.length; i++) { %>
+            <tr>
+                <td></td>
+                <td><%= i + 1 %></td>
+                <td><%= formatDateToDDMMYY(offer3[i].offer3_avai_date) %></td>
+                <td><%= formatDateToDDMMYY(offer3[i].offer3_expi_date) %></td>
+                <td><%= offer3[i].offer3_title %></td>
+                <td><%= offer3[i].offer3_discount %></td>
+                <td style="width: 200px; height: 100px;">
+                    <img src="/admin/uploads/<%= offer3[i].offer3_upload %>" alt="" style="width: 200px; height: 100px;">
+                </td>
+            </tr>
+        <% } %>
+    </table>
+
+
+    <%-include('footer.ejs')%>

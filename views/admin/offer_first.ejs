@@ -1,0 +1,129 @@
+<%-include("navbar.ejs")%>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+                <h1 class="text-dark " style="font-weight:600 ;">Add Image Icon</h1>
+            </div </div>
+
+            <div class="row mt-5">
+                <form action="/admin/save_offer_first" method="post" class="m-4" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-4">
+                            Enter Sub Title1
+                            <input type="text" name="offer1_sub_title1" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Title1
+                            <input type="text" name="offer1_title1" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            Enter Discount1
+                            <input type="text" name="offer1_discount1" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Enter Sub Title2
+                            <input type="text" name="offer1_sub_title2" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Enter Title2
+                            <input type="text" name="offer1_title2" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Enter Discount2
+                            <input type="text" name="offer1_discount2" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Enter Sub Title3
+                            <input type="text" name="offer1_sub_title3" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Enter Title3
+                            <input type="text" name="offer1_title3" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Enter Discount3
+                            <input type="text" name="offer1_discount3" class="form-control">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Upload Offer First Image
+                            <input type="file" name="offer1_image1" class="form-control " accept="image/*">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Upload Offer Second Image
+                            <input type="file" name="offer1_image2" class="form-control " accept="image/*">
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            Upload Offer Third Image
+                            <input type="file" name="offer1_image3" class="form-control " accept="image/*">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-12 d-flex justify-content-center mt-3">
+                            <button class="btn btn-success">Save Offer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table class="table table-success table-bordered table-striped">
+              <tr>
+                <th>Action</th>
+                <th>SrNO</th>
+                <th>offer1_sub_title1</th>
+                <th>offer1_title1</th>
+                <th>offer1_discount1</th>
+                <th>offer1_image1</th>
+                <th>offer1_sub_title2</th>
+                <th>offer1_title2</th>
+                <th>offer1_discount2</th>
+                <th>offer1_image2</th>
+                <th>offer1_sub_title3</th>
+                <th>offer1_title3</th>
+                <th>offer1_discount3</th>
+                <th>offer1_image3</th>
+              </tr>
+              <% for(var i=0; i<offer1.length; i++ ) { %>
+              <tr>
+                <td style="width:10%;">
+                    <a href="/admin/edit_offer" class="btn btn-success p-1">
+                        <i class="fa-solid fa-pen-to-square">
+    
+                        </i>
+                    <a href="/admin/delete_offer" class="btn btn-danger p-1 mt-2">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+
+                <td><%= i + 1 %></td>
+                <td><%= offer1[i].offer1_sub_title1 %></td>
+                <td><%= offer1[i].offer1_title1 %></td>
+                <td><%= offer1[i].offer1_discount1 %></td>
+                <td>
+                    <img src="/admin/uploads/<%= offer1[i].offer1_image1 %>" alt="" style="height: 100px; width: 100px;">
+                </td>
+
+                <td><%=offer1[i].offer1_sub_title2%></td>
+                <td><%=offer1[i].offer1_title2%></td>
+                <td><%=offer1[i].offer1_discount2%></td>
+                <td>
+                    <img src="/admin/uploads/<%=offer1[i].offer1_image2%>" alt="" style="height: 100px; width: 100px   ;">
+                </td>
+
+                <td><%=offer1[i].offer1_sub_title3%></td>
+                <td><%=offer1[i].offer1_title3%></td>
+                <td><%=offer1[i].offer1_discount3%></td>
+                <td>
+                    <img src="/admin/uploads/<%=offer1[i].offer1_image3%>" alt="" style="height: 100px; width: 100px   ;">
+                </td>
+
+              </tr>
+              <% } %>
+              <!-- Add table rows here -->
+            </table>
+          </div>
+          
+<br><br><br><br><br><br><br><br><br><br>
+<%- include("footer.ejs")%>

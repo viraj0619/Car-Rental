@@ -1,0 +1,65 @@
+<%-include("navbar.ejs")%>
+<div class="register_form mt-5 mb-5">
+    <section class="container">
+        <div class="row">
+            <header class="text-white" style="font-size: 30px;">Registration Form</header>
+            <form class="form" action="/save_ragister" method="post">
+                <div class="input-box">
+                    <input required name="user_name" placeholder="Enter full name" type="text">
+                </div>
+                <div class="input-box">
+                    <input required name="user_email" placeholder="Enter email" type="email">
+                </div>
+                <div class="column">
+                    <div class="input-box">
+                        <input required name="user_mobile" placeholder="Enter phone number" type="tel">
+                    </div>
+                    <div class="input-box">
+                        <input required name="user_aadhar" placeholder="Enter aadhar no" type="text">
+                    </div>
+                    <div class="input-box">
+                        <input required name="user_password" placeholder="Create password" type="password">
+                    </div>
+                </div>
+                <div class="gender-box">
+                    <div class="gender-option">
+                        <div class="gender">
+                            <input checked name="gender" id="check-male" type="radio" value="Male">
+                            <label for="check-male">Male</label>
+                        </div>
+                        <div class="gender">
+                            <input name="gender" id="check-female" type="radio" value="Female">
+                            <label for="check-female">Female</label>
+                        </div>
+                        <div class="gender">
+                            <input name="gender" id="check-other" type="radio" value="Other">
+                            <label for="check-other">Other</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <textarea class="input" name="user_address" required style="border: none;" placeholder="Enter street address"></textarea>
+                </div>
+                <div class="input-box address">
+                    <div class="column">
+                        <div class="select-box">
+                            <select name="user_country" style="background-color: rgb(77,76,76);" required>
+                                <option hidden>Country</option>
+                                <option disabled>Choose</option>
+                                <option value="India">India</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <input required name="user_city" placeholder="Enter your city" type="text">
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+                <div class="bottom-text d-flex justify-content-center mt-3">
+                    <p class="text-white">Already have an account? <a href="/login">Login now</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+    <%-include("footer.ejs")%>

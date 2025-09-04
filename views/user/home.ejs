@@ -1,0 +1,267 @@
+<%-include("navbar.ejs")%>
+
+
+
+  <div class="container-fluid"
+    style="background-image: url('/user/img/carbg1.jpg');background-size: 100% 100%; height: 550px; width: 100%; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="row">
+      <div class="col-sm-12 col-lg-5 ">
+        <form class="book_form bg-white" action="/rent_car" method="post">
+          <h3 class="text-dark"> Make Your Trip</h3>
+          <label for="name" class="rent_book_label">
+            <span class="rent_book_title text-dark ">Pick Up Location</span>
+            <input class="car_book_input-field bg-light" type="text" required name="pickup_location" title="Input title"
+              placeholder="City,Airport,station,etc" />
+          </label>
+         
+          <label for="serialCardNumber" class="rent_book_label">
+            <span class="rent_book_title text-dark ">PICK-UP TIME</span>
+            <input id="serialCardNumber" class="car_book_input-field bg-light" type="time"  required name="pickup_pick"/>
+            <span class="rent_book_title text-dark ">DROP-OFF TIME</span>
+            <input id="serialCardNumber" class="car_book_input-field bg-light" type="time" required name="pickup_drop" />
+          </label>
+          <div class="split">
+            <label for="ExDate" class="rent_book_label">
+              <span class="rent_book_title  text-dark">PICK-UP DATE</span>
+              <input id="cvv" class="car_book_input-field_date " type="date" required name="pickup_date" />
+            </label>
+            <label for="cvv" class="rent_book_label">
+              <span class="rent_book_title text-dark"> DROP-OFF DATE</span>
+              <input id="cvv" class="car_book_input-field_date" type="date" required name="pickup_drop_date" />
+            </label>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%if(id > 0){%>
+            <button class="checkout-btn">Rent A Car Now</button>
+            <%}else{%>
+            <a class="btn btn-success mt-4" href="/login">Login First</a>
+            <%}%>
+          </div>
+
+        </form>
+      </div>
+      <% for(var i=0 ;i<slider.length; i++) { %>
+      <div class="col-sm-12 col-lg-7 p-5">
+        <h1 class="text-center text-white" style="margin-top:200px;font-size: 60px;"><%=slider[i].home_title%></h1>
+        <p class="text-center text-white" style="font-size: 20px;"><%=slider[i].home_sub_title%>
+        </p>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+
+
+  <!-- Car Banners
+<div class="container-fluid">
+<div class="row p-5">
+  <div class="col-lg-3 col-sm-12">
+    <div class="card card-body p-0" style="border-radius: 10px;">
+      <div class="gallery" onclick="openLightbox(event)">
+        <img height="300px" width="100%"
+          src="https://www.wallpapersshare.com/img/big/red-mercedes-benz-cars-ultra-hd-laptop-wallpaper.jpg"
+          alt="Image 1">
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox">
+    <span id="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="lightbox image">
+    <div id="thumbnail-container">
+    </div>
+    <!-- <button id="prev-btn" onclick="changeImage(-1)">&lt; Prev</button>
+  <button id="next-btn" onclick="changeImage(1)">Next &gt;</button> -->
+  <!-- </div>
+</div>
+</div> --> -->
+
+
+
+
+
+
+
+  <!-- <div class="container-fluid our_satisfied_customer">
+    <div class="our_customer_box">
+      <label> <i class="fa-solid fa-calendar-days "></i>
+        <h5 class="number" data-number="50">0+</h5>
+        <p>Lorem, ipsum dolor.</p>
+      </label>
+    </div>
+    <div class="our_customer_box">
+      <label> <i class="fa-solid fa-calendar-days "></i>
+        <h5 class="number" data-number="250">0+</h5>
+        <p>Lorem, ipsum dolor.</p>
+      </label>
+    </div>
+    <div class="our_customer_box">
+      <label> <i class="fa-solid fa-calendar-days "></i>
+        <h5 class="number" data-number="500">0+</h5>
+        <p>Lorem, ipsum dolor.</p>
+      </label>
+    </div>
+    <div class="our_customer_box">
+      <label> <i class="fa-solid fa-calendar-days "></i>
+        <h5 class="number" data-number="750">0+</h5>
+        <p>Lorem, ipsum dolor.</p>
+      </label>
+    </div>
+
+  </div> -->
+
+
+
+
+
+
+  <div class="container-fluid bg-dark">
+    <% for(var i=0; i<offer1.length;i++) {%>
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-sm-12 col-lg-4 hover_image_cards">
+          <div class="card card-body p-0">
+            <div class="hover_image" style="position: relative;">
+              <img src="/admin/uploads/<%=offer1[i].offer1_image1%>" alt="Car Collections" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="hover_image_overflow" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
+                <div class="middle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                  <span style="color: white; font-size: 20px;"><%=offer1[i].offer1_sub_title1%></span>
+                  <h2 style="color: rgb(72, 230, 10); text-shadow: 0px 0px 2px red;"><%=offer1[i].offer1_title1%></h2>
+                  <a href="" class="btn btn-info p-1"><%=offer1[i].offer1_discount1%></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-sm-12 col-lg-4 hover_image_cards">
+          <div class="card card-body p-0">
+            <div class="hover_image" style="position: relative;">
+              <img src="/admin/uploads/<%=offer1[i].offer1_image2%>" alt="Car Collections" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="hover_image_overflow" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
+                <div class="middle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                  <span style="color: white; font-size: 20px;"><%=offer1[i].offer1_sub_title2%></span>
+                  <h2 style="color: rgb(72, 230, 10); text-shadow: 0px 0px 2px red;"><%=offer1[i].offer1_title2%></h2>
+                  <a href="" class="btn btn-info p-1"><%=offer1[i].offer1_discount2%></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 hover_image_cards">
+          <div class="card card-body p-0">
+            <div class="hover_image" style="position: relative;">
+              <img src="/admin/uploads/<%=offer1[i].offer1_image3%>" alt="Car Collections" style="width: 100%; height: 240px; object-fit: cover;">
+              <div class="hover_image_overflow" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);">
+                <div class="middle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                  <span style="color: white; font-size: 20px;"><%=offer1[i].offer1_sub_title3%></span>
+                  <h2 style="color: rgb(72, 230, 10); text-shadow: 0px 0px 2px red;"><%=offer1[i].offer1_title2%></h2>
+                  <a href="" class="btn btn-info p-1"><%=offer1[i].offer1_discount3%></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <div class="container">
+    <div class="row mb-5 mt-5 banner_time">
+      <div class="col-lg-6 col-sm-12 bg-dark p-2 mt-3 mb-3">
+        <h1 class="text-white text-center">Trends Designs</h1>
+        <div class="offer2">
+          <div class="middle_part">
+            <p>1800 555 8888 <i class="fa-solid fa-phone"></i><br>
+              <span style="font-weight: 500; font-size: 27px;">Book Your Car </span>
+            </p>
+            <a href="">Book Now</a>
+
+          </div>
+        </div>
+      </div>
+      <% for(var i=0; i<offer2.length; i++) { %>
+      <div class="col-lg-6 col-sm-12 mt-3 mb-3" style="background-color: rgba(177, 241, 27,0.2);">
+        <p style="letter-spacing: 10px; text-align: center; "><%=offer2[i].offer2_head%></p>
+        <h2 class="text-center"><%=offer2[i].offer2_title%></h2>
+        <p class="text-center p-2"><%=offer2[i].offer2_desc%></p>
+        <p style="color: orangered; text-align: center;font-size: 25px;">&#8377;<%=offer2[i].offer2_price%> <del
+            style="color: black; font-size: 20px;"> &#8377;<%=offer2[i].offer2_duplicate%></del> </p>
+        <div id="day"></div>
+        <div id="clock"></div>
+
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- ----Car Banner---Offer -->
+  <div class="container-fluid mt-5 mb-5">
+    <div class="row p-5">
+      <% for(var i=0; i<offer3.length;i++) { %>
+      <div class="col-sm-12 col-lg-6 ">
+        <div class="card-body bg-dark">
+          <div class="row ">
+            <div class="col-5 p-3">
+              <div class="bg-light mt-2 ">
+                <p class="p-2">Available Date  <span>
+                  <%= new Date(offer3[i].offer3_avai_date).toISOString().slice(0, 10) %>
+                </span><br />
+                  Expire Date <span> <%=offer3[i].offer3_expi_date.toISOString().slice(0,10)%></span></p>
+              </div>
+              <h3 class="text-white pt-1"><%=offer3[i].offer3_title%></h3>
+              <a href="" class="btn btn-warning ms-2 mt-2" style="text-decoration: none;color: azure;"><%=offer3[i].offer3_discount%> &nbsp;Off</a>
+            </div>
+            <div class="col-7 p-3">
+              <img
+                src="/admin/uploads/<%=offer3[i].offer3_upload%>"
+                width="100%" height="200px" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row" id="feature">
+      <div class="col-md-3" id="heading">
+        <h2>Why Choose <span class="text-success">Zoomcar</span> Self Drive Cars <span class="text-danger">in</span>
+          Mumbai?</h2>
+      </div>
+      <div class="col-md-3">
+        <img src="user/img/img.png" alt="Accessible" id="fea" class="text-dark mt-4">
+        <h2 class="text-success">Accessible</h2>
+        <p class="text-dark">Pay 0 security deposit, get unlimited KMSThere</p>
+      </div>
+
+      <div class="col-md-3">
+        <img src="user/img/img1.png" alt="Secure" id="fea">
+        <h2 class="text-success">Secure</h2>
+        <p class="text-dark">There's always a Zoomcar near you</p>
+      </div>
+
+      <div class="col-md-3">
+        <img src="user/img/img2.png" alt="Convenient" id="con">
+        <h2 class="text-success">Convenient</h2>
+        <p class="text-dark">From Hatchbacks to SUVs, choose from 25,000+ cars</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+  <%-include("footer.ejs")%>

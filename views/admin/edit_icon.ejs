@@ -1,0 +1,49 @@
+<%-include("navbar.ejs")%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center text-center gradient-background">
+            <h1 class="text-dark " style="font-weight:600 ;">Update Image Icon</h1>
+        </div </div>
+
+        <div class="row mt-5">
+            <form action="/admin/update_icon" method="post" class="m-4">
+                <div class="col-md-4">
+                    <input type="hidden" name="icon_id" class="form-control" value="<%=iedit.icon_id%>">
+                </div>
+                <div class="row">
+                   
+                    <div class="col-md-4">
+                        Enter Navbar Address
+                        <input type="text" name="icon_address" class="form-control" value="<%=iedit.icon_address%>">
+                    </div>
+                    <div class="col-md-4">
+                        Enter Navbar Mobile
+                        <input type="text" name="icon_mobile" class="form-control" value="<%=iedit.icon_mobile%>">
+                    </div>
+                    <div class="col-md-4">
+                        Enter Open/Close Time
+                        <input type="text" name="icon_time" class="form-control" value="<%=iedit.icon_time%>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mt-4">
+                        Enter Linkedin Link
+                        <input type="text" name="icon_linkedin" class="form-control" value="<%=iedit.icon_linkedin%>">
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        Enter Facebook Link
+                        <input type="text" name="icon_facebook" class="form-control" value="<%=iedit.icon_facebook%>">
+                    </div>
+                    <div class="col-md-4 mt-4">
+                        Enter Icon What's App
+                        <input type="text" name="icon_whatsapp" class="form-control" value="<%=iedit.icon_whatsapp%>">
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center mt-4">
+                        <button class="btn btn-success">Save </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%-include("footer.ejs")%>
